@@ -1,0 +1,20 @@
+// {type:sequence}
+// {generate:true}
+
+[:User]Click>[:cmdSearch_Click]
+[:cmdSearch_Click]Open("C:\\Deep.rda")>[:File]
+[:cmdSearch_Click]GetLength>[:File]
+[:File]ReturnLength>[:cmdSearch_Click]
+[:cmdSearch_Click]Calculate intCount>[:Variables]
+[:cmdSearch_Click]For intNum from 1 to intCount>[:Loop]
+[:Loop]ReadData>[:File]
+[:File]ReturnData>[:Loop]
+[:Loop]CheckConditions>[:Logic]
+[:Logic]Assign strSearch>[:Variables]
+[:Loop]Compare Trim(strSearch) with txtSearch>[:Logic]
+[:Logic][If Match]Display MessageBox>[:MessageBox]
+[:Logic][If Match]Assign Values>[:Variables]
+[:Loop]End If>[:Loop]
+[:Loop]End Loop>[:cmdSearch_Click]
+[:cmdSearch_Click]Close>[:File]
+[:cmdSearch_Click]End>[:User]

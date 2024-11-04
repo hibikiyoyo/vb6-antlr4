@@ -69,9 +69,9 @@ function parseProjectFolder(projectFolder, outputFolder) {
 }
 
 function saveTheStructureOfProject(files, outputFolder) {
-    const content = files.join('\n');
+    const content = "# Structure of Project: \n" + files.join('\n');
 
-    const outputPath = path.join(outputFolder, "structure.txt");
+    const outputPath = path.join(outputFolder, "structure.md");
     console.log(outputPath)
     // Ensure the directory exists
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
